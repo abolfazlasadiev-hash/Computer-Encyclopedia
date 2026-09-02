@@ -1,0 +1,22 @@
+@use "./variables.scss" as *;
+
+// Persian / RTL article content
+article {
+  direction: rtl;
+  text-align: right;
+}
+
+article pre,
+article code {
+  direction: ltr;
+  text-align: left;
+}
+
+article a {
+  direction: rtl;
+}
+
+article [dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
