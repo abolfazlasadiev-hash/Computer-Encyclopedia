@@ -1,5 +1,6 @@
 /*
- * Computer Encyclopedia — minimal technical documentation theme.
+ * Computer Encyclopedia — Obsidian-inspired two-pane workspace.
+ * Folder explorer on the left; selected Markdown note in the center.
  * All site assets are compiled by GitHub Actions.
  */
 
@@ -13,7 +14,7 @@ body {
 }
 
 #quartz-body {
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .page,
@@ -22,9 +23,10 @@ body {
 }
 
 article {
-  max-width: 78ch;
+  max-width: 92ch;
   line-height: 1.75;
   font-size: 1rem;
+  margin-inline: auto;
 }
 
 article p,
@@ -107,13 +109,16 @@ thead tr {
   background: var(--highlight);
 }
 
-.left.sidebar,
-.right.sidebar {
+/* The explorer is the only navigation panel. */
+.left.sidebar {
   scrollbar-width: thin;
 }
 
+.right.sidebar {
+  display: none !important;
+}
+
 .explorer,
-.graph,
 .search {
   border: 1px solid var(--ce-border);
   border-radius: 6px;
@@ -184,14 +189,24 @@ footer {
   line-height: 1.5;
 }
 
+/* Keep the workspace compact and persistent on desktop. */
 @media (min-width: 1200px) {
-  .left.sidebar,
-  .right.sidebar {
+  #quartz-body {
+    grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-center"
+      "grid-footer grid-footer" !important;
+  }
+
+  .left.sidebar {
     position: sticky;
     top: 1rem;
     align-self: start;
     max-height: calc(100vh - 2rem);
     overflow-y: auto;
+    border-right: 1px solid var(--ce-border);
+    padding-right: 0.75rem;
   }
 }
 
