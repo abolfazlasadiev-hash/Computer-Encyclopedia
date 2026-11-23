@@ -31,6 +31,22 @@ jobs:
           set -euo pipefail
           mkdir -p .build-content
           cp -a "01-University courses" "03-Development-journey" .build-content/
+          cat > .build-content/index.md <<'EOF'
+          ---
+          title: Computer Encyclopedia
+          description: A structured knowledge base for computer science, networking, Linux, hardware, and technology.
+          ---
+          # Computer Encyclopedia
+
+          Welcome to Computer Encyclopedia — a growing, interconnected knowledge base.
+
+          ## Explore the knowledge base
+
+          - [[01-University courses/Network/Network-Academy/00-Home|University courses]]
+          - [[03-Development-journey/04-Tools/Linux/01MyDebian/Folder|Development journey]]
+
+          Use the search panel to find topics, browse folders in the explorer, or explore connections through the knowledge graph.
+          EOF
 
       - name: Build Quartz on GitHub
         uses: konstfish/quartz-build-action@v7
