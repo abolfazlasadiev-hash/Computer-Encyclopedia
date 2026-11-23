@@ -1,0 +1,25 @@
+# Routing
+
+## Lessons
+
+- [[01-Routing Fundamentals]]
+- [[02-Routing Table]]
+- [[03-Static Routing]]
+- [[04-Default Routing]]
+- [[05-Floating Static Route]]
+- [[06-Dynamic Routing]]
+- [[07-RIP]]
+- [[08-OSPF]]
+- [[09-OSPF Single Area]]
+- [[10-OSPF Multi Area]]
+- [[11-OSPF DR and BDR]]
+- [[12-OSPF Authentication]]
+- [[13-EIGRP]]
+- [[14-BGP]]
+- [[15-eBGP]]
+- [[16-iBGP]]
+- [[17-BGP Attributes]]
+- [[18-Route Filtering]]
+- [[19-Route Redistribution]]
+- [[20-Policy Based Routing]]
+- [[21-IPv6 Routing]]
