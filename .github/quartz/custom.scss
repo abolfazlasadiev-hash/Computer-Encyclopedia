@@ -1,0 +1,50 @@
+/*
+ * Computer Encyclopedia — custom Quartz styling
+ * Kept in the repository; compiled only by GitHub Actions.
+ */
+
+:root {
+  --ce-radius: 14px;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgba(83, 119, 205, 0.08), transparent 34%),
+    radial-gradient(ellipse at 92% 12%, rgba(62, 153, 165, 0.06), transparent 30%);
+  background-attachment: fixed;
+}
+
+article {
+  line-height: 1.78;
+}
+
+article h1,
+article h2,
+article h3 {
+  letter-spacing: -0.025em;
+}
+
+article h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+pre,
+.callout {
+  border-radius: var(--ce-radius);
+}
+
+blockquote {
+  border-radius: 0 var(--ce-radius) var(--ce-radius) 0;
+}
+
+@media (min-width: 1200px) {
+  article {
+    max-width: 78ch;
+  }
+}
