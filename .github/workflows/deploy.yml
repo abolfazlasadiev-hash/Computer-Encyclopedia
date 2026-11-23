@@ -33,51 +33,124 @@ jobs:
           set -euo pipefail
           mkdir -p .build-content
           cp -a "01-University courses" "03-Development-journey" .build-content/
+
           cat > .build-content/index.md <<'EOF'
           ---
           title: Computer Encyclopedia
-          description: Explore a connected knowledge base for computer science, networking, Linux, software development, and technology.
+          description: A structured technical knowledge base for computer science, networking, Linux, and software development.
           ---
-          <div class="ce-home-hero">
-
-          <p class="ce-home-eyebrow">A PERSONAL KNOWLEDGE LIBRARY</p>
 
           # Computer Encyclopedia
 
-          <p class="ce-home-lead">Understand the technology that shapes our world.</p>
+          <p class="ce-home-intro">A practical, interconnected reference for computer science, systems, networking, and software development.</p>
 
-          A growing, interconnected encyclopedia of computer science, systems, networking, and the tools behind modern technology.
+          ## Browse the knowledge base
 
-          </div>
-
-          ## Explore the encyclopedia
-
-          <div class="ce-home-grid">
-
-          <a class="ce-home-card" href="01-University-courses/Network/Network-Academy/00-Home">
-          <span class="ce-home-card-kicker">01 · LEARN</span>
+          <div class="ce-home-links">
+          <a class="ce-home-link" href="01-University-courses/Network/Network-Academy/00-Home">
           <strong>University courses</strong>
-          <span>Study notes, core concepts, networking, and structured learning resources.</span>
-          <span class="ce-home-card-link">Explore courses →</span>
+          <span>Course notes, fundamental concepts, and networking study materials.</span>
           </a>
-
-          <a class="ce-home-card" href="03-Development-journey/04-Tools/Linux/01MyDebian/Folder">
-          <span class="ce-home-card-kicker">02 · BUILD</span>
+          <a class="ce-home-link" href="03-Development-journey/04-Tools/Linux/01MyDebian/Folder">
           <strong>Development journey</strong>
-          <span>Practical tools, Linux workflows, experiments, and technical projects.</span>
-          <span class="ce-home-card-link">Explore the journey →</span>
+          <span>Linux, developer tools, practical workflows, and experiments.</span>
           </a>
-
           </div>
 
-          ## Make the most of this library
+          ## Reference tools
 
-          - **Search:** Find a concept or topic using the search panel.
-          - **Browse:** Navigate the folder explorer to discover related subjects.
-          - **Connect:** Open the graph to see how ideas and notes relate to each other.
+          - [[Learning Paths|Learning paths]] — suggested sequences for studying technical topics.
+          - [[Glossary|Glossary]] — concise definitions of common computing terms.
 
-          > This encyclopedia grows with every note. Follow links between concepts, explore unfamiliar topics, and build your own understanding.
+          ## How to use this site
 
+          Use the search field to find a topic, browse the folder explorer to discover notes, and follow links inside articles to explore connected concepts.
+          EOF
+
+          cat > .build-content/Glossary.md <<'EOF'
+          ---
+          title: Glossary
+          description: A growing glossary of computer science and information technology terms.
+          ---
+
+          # Glossary
+
+          This glossary is a central index for technical terms used throughout the encyclopedia. Definitions can be expanded as the related notes grow.
+
+          ## A–C
+
+          - **Algorithm:** A finite sequence of well-defined steps used to solve a problem.
+          - **API (Application Programming Interface):** A defined way for software components to communicate.
+          - **CPU (Central Processing Unit):** The processor that executes instructions in a computer.
+          - **Cache:** A small, fast storage layer that keeps frequently used data close to where it is needed.
+          - **CLI (Command-Line Interface):** A text-based interface for operating software.
+
+          ## D–H
+
+          - **DNS (Domain Name System):** A distributed system that translates domain names into IP addresses and other records.
+          - **File system:** The structures and rules an operating system uses to organize and access stored data.
+          - **HTTP (Hypertext Transfer Protocol):** An application-layer protocol used to transfer web resources.
+          - **Kernel:** The core part of an operating system that manages hardware and system resources.
+
+          ## I–M
+
+          - **IP address:** A logical address used to identify an interface on an IP network.
+          - **Linux:** A family of operating systems built around the Linux kernel.
+          - **Memory:** Storage used to hold data and instructions while a system is operating.
+
+          ## N–S
+
+          - **Network:** A group of connected devices that exchange data.
+          - **Operating system:** System software that manages hardware and provides services to applications.
+          - **Protocol:** A set of rules that define communication between systems.
+          - **Repository:** A storage location for project files and their version history.
+
+          ## T–Z
+
+          - **TCP (Transmission Control Protocol):** A transport protocol that provides reliable, ordered delivery of data.
+          - **URL (Uniform Resource Locator):** An address that identifies a resource and how to access it.
+          - **Virtualization:** The creation of virtual computing resources, such as virtual machines.
+          EOF
+
+          cat > ".build-content/Learning Paths.md" <<'EOF'
+          ---
+          title: Learning Paths
+          description: Suggested study sequences through the Computer Encyclopedia.
+          ---
+
+          # Learning Paths
+
+          These paths organize existing and future notes into practical learning sequences. Follow the suggested order, and use the links within each note to explore related concepts.
+
+          ## Computer science foundations
+
+          1. Start with basic computer concepts and terminology.
+          2. Study data representation, operating systems, and computer architecture.
+          3. Continue with algorithms, programming, and software design.
+
+          ## Computer networking
+
+          1. Review network fundamentals and common terminology.
+          2. Study network models, addressing, and subnetting.
+          3. Continue with routing, switching, transport protocols, and network services.
+          4. Use the [[01-University courses/Network/Network-Academy/00-Home|Network Academy notes]] as the course entry point.
+
+          ## Linux and system administration
+
+          1. Learn the Linux filesystem and command-line basics.
+          2. Practice users, permissions, processes, and package management.
+          3. Continue with networking, services, shell scripting, and troubleshooting.
+          4. Explore the [[03-Development-journey/04-Tools/Linux/01MyDebian/Folder|Linux and Debian notes]].
+
+          ## Software development
+
+          1. Learn programming fundamentals and version control.
+          2. Practice command-line tools and development environments.
+          3. Study testing, debugging, automation, and deployment.
+
+          ## Improving these paths
+
+          As the encyclopedia expands, add links to specific notes under each step. Keep each path focused, ordered, and suitable for a learner progressing from fundamentals to practical work.
           EOF
 
       - name: Build Quartz on GitHub
