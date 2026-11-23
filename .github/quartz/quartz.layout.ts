@@ -1,6 +1,12 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+/**
+ * Obsidian-inspired workspace:
+ * - folder/file explorer on the left
+ * - selected note in the center
+ * - no right sidebar, graph, or secondary navigation
+ */
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
@@ -12,6 +18,18 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
+const explorerSidebar = [
+  Component.PageTitle(),
+  Component.MobileOnly(Component.Spacer()),
+  Component.Flex({
+    components: [
+      { Component: Component.Search(), grow: true },
+      { Component: Component.Darkmode() },
+    ],
+  }),
+  Component.Explorer(),
+]
+
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
@@ -22,21 +40,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        { Component: Component.Search(), grow: true },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.Explorer(),
-  ],
-  right: [
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-  ],
+  left: explorerSidebar,
+  right: [],
 }
 
 export const defaultListPageLayout: PageLayout = {
@@ -45,16 +50,6 @@ export const defaultListPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        { Component: Component.Search(), grow: true },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.Explorer(),
-  ],
+  left: explorerSidebar,
   right: [],
 }
