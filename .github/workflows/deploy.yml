@@ -36,18 +36,48 @@ jobs:
           cat > .build-content/index.md <<'EOF'
           ---
           title: Computer Encyclopedia
-          description: A structured knowledge base for computer science, networking, Linux, hardware, and technology.
+          description: Explore a connected knowledge base for computer science, networking, Linux, software development, and technology.
           ---
+          <div class="ce-home-hero">
+
+          <p class="ce-home-eyebrow">A PERSONAL KNOWLEDGE LIBRARY</p>
+
           # Computer Encyclopedia
 
-          Welcome to Computer Encyclopedia — a growing, interconnected knowledge base.
+          <p class="ce-home-lead">Understand the technology that shapes our world.</p>
 
-          ## Explore the knowledge base
+          A growing, interconnected encyclopedia of computer science, systems, networking, and the tools behind modern technology.
 
-          - [[01-University courses/Network/Network-Academy/00-Home|University courses]]
-          - [[03-Development-journey/04-Tools/Linux/01MyDebian/Folder|Development journey]]
+          </div>
 
-          Use the search panel to find topics, browse folders in the explorer, or explore connections through the knowledge graph.
+          ## Explore the encyclopedia
+
+          <div class="ce-home-grid">
+
+          <a class="ce-home-card" href="01-University-courses/Network/Network-Academy/00-Home">
+          <span class="ce-home-card-kicker">01 · LEARN</span>
+          <strong>University courses</strong>
+          <span>Study notes, core concepts, networking, and structured learning resources.</span>
+          <span class="ce-home-card-link">Explore courses →</span>
+          </a>
+
+          <a class="ce-home-card" href="03-Development-journey/04-Tools/Linux/01MyDebian/Folder">
+          <span class="ce-home-card-kicker">02 · BUILD</span>
+          <strong>Development journey</strong>
+          <span>Practical tools, Linux workflows, experiments, and technical projects.</span>
+          <span class="ce-home-card-link">Explore the journey →</span>
+          </a>
+
+          </div>
+
+          ## Make the most of this library
+
+          - **Search:** Find a concept or topic using the search panel.
+          - **Browse:** Navigate the folder explorer to discover related subjects.
+          - **Connect:** Open the graph to see how ideas and notes relate to each other.
+
+          > This encyclopedia grows with every note. Follow links between concepts, explore unfamiliar topics, and build your own understanding.
+
           EOF
 
       - name: Build Quartz on GitHub
